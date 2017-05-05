@@ -1,7 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import App, { AppContainer } from "./AppContainer";
+import { Provider } from "react-redux";
+import { store } from "./store";
+import "./index.css";
 
 /**
  * @param {Object} ReactElement
@@ -10,6 +12,8 @@ import './index.css';
 ReactDOM.render({ReactElement}, {DOMElement}, [callback]);
  */
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
 );

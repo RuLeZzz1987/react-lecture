@@ -19,17 +19,15 @@ class UserDetails extends PureComponent {
     const { user, hide } = this.props;
 
     return (
-      <Modal show={!!user} backdrop onHide={hide}>
-        {user &&
+      <Modal show={user.isLoaded} backdrop onHide={hide}>
           <Modal.Header closeButton>
             <Col xs={4} xsOffset={4}>
               {user.name}
             </Col>
-          </Modal.Header>}
-        {user &&
+          </Modal.Header>
           <Modal.Body>
             <Thumbnail src={user.avatar_url} />
-          </Modal.Body>}
+          </Modal.Body>
       </Modal>
     );
   }
